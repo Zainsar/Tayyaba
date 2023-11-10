@@ -1,6 +1,4 @@
 <?php
-
-
 require('Includes/config.php');
 
 if (isset($_GET['query'])) {
@@ -18,7 +16,6 @@ if (isset($_GET['query'])) {
         echo "No results found";
     }
 }
-
 $connection->close();
 
 ?>

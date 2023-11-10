@@ -8,12 +8,12 @@ if (isset($_GET['id'])) {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        
-echo ' <div class="col-md-4 col-lg-2 col-sm-12">
+
+        echo ' <div class="col-md-4 col-lg-2 col-sm-12">
         <div class="product-fade">
               <div class="product-fade-wrap">
                   <div id="product-image" class="">
-                      <div class="item"><img src="'.'images/' . $row['pimage'].'" alt="" class="img-responsive"></div>
+                      <div class="item"><img src="' . 'images/' . $row['pimage'] . '" alt="" class="img-responsive"></div>
                   </div>
                   <div class="product-fade-ct">
                       <div class="product-fade-control">
@@ -24,7 +24,7 @@ echo ' <div class="col-md-4 col-lg-2 col-sm-12">
                           </div>
                          
                           <div class="clearfix"></div>
-                          <a href="singleproduct.php?pid= '.$row["pid"].'" class="btn btn-to-cart"style="font-size: 60%; width: 75%; height: 30%;"><span class="bag"></span><span>View Product</span><div class="clearfix"></div></a>
+                          <a href="singleproduct.php?pid= ' . $row["pid"] . '" class="btn btn-to-cart"style="font-size: 60%; width: 75%; height: 30%;"><span class="bag"></span><span>View Product</span><div class="clearfix"></div></a>
                       </div>
                       
                   </div>
@@ -32,11 +32,11 @@ echo ' <div class="col-md-4 col-lg-2 col-sm-12">
         </div>
         
         <div class="product-name">
-            <a href="">'.$row['ptitle'].'</a>
+            <a href="">' . $row['ptitle'] . '</a>
         </div>
         <div class="star-1"></div>
         <div class="product-price">
-            <span>'.$row['pprice'].'</span>
+            <span>' . $row['pprice'] . '</span>
         </div>
     </div>';
     } else {

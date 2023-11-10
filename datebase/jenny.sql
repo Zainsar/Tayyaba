@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2023 at 03:23 PM
+-- Generation Time: Nov 10, 2023 at 04:25 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -64,17 +64,17 @@ CREATE TABLE `addproduct` (
 --
 
 INSERT INTO `addproduct` (`pid`, `ptitle`, `pdescription`, `pcategory`, `pprice`, `pimage`, `status`) VALUES
-(1, 'New Necklace', 'Most attractive product ', 2, '66K', 'card6.jpg', 1),
-(2, 'Jhumka', 'Most attractive product', 2, '888K', 'j1.jpg', 1),
-(3, 'Gold Rings', 'very attractive ', 2, '888K', 'j3.webp', 1),
-(4, 'silver stone  set', 'Most attractive product', 2, '888K', 'j8.webp', 1),
+(1, 'New Necklace', 'Most attractive product ', 2, '66', 'card6.jpg', 1),
+(2, 'Jhumka', 'Most attractive product', 2, '888', 'j1.jpg', 1),
+(3, 'Gold Rings', 'very attractive ', 2, '888', 'j3.webp', 1),
+(4, 'silver stone  set', 'Most attractive product', 2, '888', 'j8.webp', 1),
 (5, 'clipearing', 'autofishal', 2, '$20', 'j20.jpg', 1),
 (7, 'Bangles', 'Mostly in silver , gold   ', 2, '11K', 'j4.webp', 1),
 (18, 'Set of lipsticks', 'Mostly in  (Multiple shades)', 1, '11K', 'c5.jpg', 1),
 (19, 'Charmacy Lipstick', 'Multiple shades', 1, '88$', 'cos5.webp', 1),
 (20, 'Bunch of blushes', 'Kit is awesome', 1, '11K', 'cos2.jpg', 1),
-(21, 'skin care', 'new beauty product', 1, '$09', 'c10.jpg', 1),
-(22, 'brush kit', 'brush set', 1, '$05', 'c6.webp', 1),
+(21, 'skin care', 'new beauty product', 1, '09', 'c10.jpg', 1),
+(22, 'brush kit', 'brush set', 1, '05', 'c6.webp', 1),
 (24, 'ring', 'silver', 2, '$11', 'c19.jpg', 1),
 (25, 'earimg', 'gold plated', 2, '$25', 'imagesj7.jpg', 1),
 (26, 'braclet', 'chain with stone', 2, '$15', 'c20.jpg', 1),
@@ -102,10 +102,10 @@ INSERT INTO `addproduct` (`pid`, `ptitle`, `pdescription`, `pcategory`, `pprice`
 (50, 'silver locket', 'chain locket', 2, '$15', 'imagesj11.webp', 1),
 (51, 'stone rings', 'white stone ', 2, '$21', 'j12.webp', 1),
 (52, 'stone braclate', 'silver stone', 2, '$25', 'j22.jpg', 1),
-(53, 'gold plated clip earing', 'gold plated', 2, '$30', 'j23.webp', 1),
-(54, 'heart shape locket', 'chain locket ', 2, '$10', 'j10.webp', 1),
+(53, 'gold earing', 'gold plated', 2, '$30', 'j23.webp', 1),
+(54, ' locket', 'chain locket ', 2, '$10', 'j10.webp', 1),
 (55, 'makeup kit', 'cream, lotion, powder etc', 1, '$25', 'cos4.webp', 1),
-(56, 'multi shade lipstick', 'multi color ', 1, '$15', 'c30.jpg', 1),
+(56, 'multi shades', 'multi color ', 1, '$15', 'c30.jpg', 1),
 (57, 'blushes set', 'blush size', 1, '$15', 'c28.jpg', 1),
 (58, 'bais kit', 'makeup bais', 1, '$20', 'pro4.jpg', 1),
 (59, 'eyeshade kit', 'light & dark', 1, '$10', 'card5.jpg', 1),
@@ -124,17 +124,19 @@ CREATE TABLE `admin_reg` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `phone` int(255) NOT NULL
+  `phone` int(255) NOT NULL,
+  `images` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin_reg`
 --
 
-INSERT INTO `admin_reg` (`id`, `name`, `email`, `password`, `phone`) VALUES
-(1, 'talha', 'muhammadtalha.aptech2006@gmail.com', '$2y$10$2122xI6lqR1wXS1sU/Osgek9DilhJ5KCyokRKB1WdOnLAt/RWslTO', 789456),
-(2, 'sadia', 'sadiabader433@gmail.com', '$2y$10$r29xLVTSIOeMiQBco5fPHupxUA77btKhKB/chAc9xL/oLUgLIivP2', 2147483647),
-(3, 'Tayyaba muslim', 'muslimtayyaba@gmail.com', '$2y$10$wDI44wBQUyPsBmKVzfMahe/mKM9sSy671OGszI/yxkaTY6YrHgAUq', 123456);
+INSERT INTO `admin_reg` (`id`, `name`, `email`, `password`, `phone`, `images`) VALUES
+(1, 'talha', 'muhammadtalha.aptech2006@gmail.com', '$2y$10$2122xI6lqR1wXS1sU/Osgek9DilhJ5KCyokRKB1WdOnLAt/RWslTO', 789456, ''),
+(2, 'sadia', 'sadiabader433@gmail.com', '$2y$10$r29xLVTSIOeMiQBco5fPHupxUA77btKhKB/chAc9xL/oLUgLIivP2', 2147483647, ''),
+(3, 'Tayyaba muslim', 'muslimtayyaba@gmail.com', '$2y$10$wDI44wBQUyPsBmKVzfMahe/mKM9sSy671OGszI/yxkaTY6YrHgAUq', 123456, ''),
+(5, 'Zain Sarfraz', 'zainsarfraz82@gmail.com', '$2y$10$MyH/MxUG9dn0X/t8LXZ6KOg3P5AiYEqlWmb2BShQL7QJICY7i8/Ze', 2147483647, 'mine pic.jpg');
 
 -- --------------------------------------------------------
 
@@ -161,10 +163,7 @@ CREATE TABLE `booked` (
 --
 
 INSERT INTO `booked` (`id`, `First Name`, `Last Name`, `Country`, `address`, `Appartment`, `city`, `postal`, `phone`, `email`, `status`) VALUES
-(1, 'Zain', 'Sarfraz', 'Pakistan', 'House No L-354 Sector5/C/3 North Karachi', '', 'karachi', 75850, 2147483647, 'zainsarfraz82@gmail.com', 1),
-(2, 'Syed', 'Muhammad', 'Pakistan', 'House No L-354 Sector5/C/3 North Karachi', '', 'karachi', 75850, 2147483647, 'zainsarfraz82@gmail.com', 1),
-(3, 'Zain', 'Sarfraz', 'Pakistan', 'House No L-354 Sector5/C/3 North Karachi', '', 'karachi', 75850, 2147483647, 'zainsarfraz82@gmail.com', 1),
-(4, 'Zain', 'Sarfraz', 'Pakistan', 'House No L-354 Sector5/C/3 North Karachi', '', 'karachi', 75850, 2147483647, 'zainsarfraz82@gmail.com', 1);
+(12, 'Zain', 'Sarfraz', 'Pakistan', 'House No L-354 Sector5/C/3 North Karachi', '', 'karachi', 75850, 2147483647, 'zainsarfraz82@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -179,20 +178,35 @@ CREATE TABLE `cart` (
   `cartqty` tinyint(20) NOT NULL,
   `cartstatus` tinyint(1) NOT NULL DEFAULT 1,
   `cartdate` datetime NOT NULL DEFAULT current_timestamp(),
-  `carttime` time NOT NULL DEFAULT current_timestamp()
+  `carttime` time NOT NULL DEFAULT current_timestamp(),
+  `updatestatus` varchar(255) NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`cartid`, `userid`, `proid`, `cartqty`, `cartstatus`, `cartdate`, `carttime`) VALUES
-(8, 11, 1, 2, 1, '2023-11-08 12:50:09', '12:50:09'),
-(11, 10, 1, 1, 1, '2023-11-09 14:14:05', '14:14:05'),
-(12, 10, 4, 2, 1, '2023-11-09 14:14:26', '14:14:26'),
-(13, 10, 28, 0, 1, '2023-11-09 17:02:20', '17:02:20'),
-(14, 10, 5, 0, 1, '2023-11-09 17:06:06', '17:06:06'),
-(22, 14, 3, 0, 1, '2023-11-09 19:23:01', '19:23:01');
+INSERT INTO `cart` (`cartid`, `userid`, `proid`, `cartqty`, `cartstatus`, `cartdate`, `carttime`, `updatestatus`) VALUES
+(25, 11, 2, 2, 1, '2023-11-10 11:40:23', '11:40:23', 'Pending'),
+(26, 11, 4, 1, 1, '2023-11-10 11:57:45', '11:57:45', 'pending'),
+(27, 11, 5, 1, 1, '2023-11-10 12:31:55', '12:31:55', 'pending'),
+(29, 14, 18, 3, 0, '2023-11-10 17:05:37', '17:05:37', 'Pending'),
+(32, 14, 27, 4, 1, '2023-11-10 17:09:52', '17:09:52', 'pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback-form`
+--
+
+CREATE TABLE `feedback-form` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone_number` int(255) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -300,6 +314,12 @@ ALTER TABLE `cart`
   ADD KEY `pro_fk` (`proid`);
 
 --
+-- Indexes for table `feedback-form`
+--
+ALTER TABLE `feedback-form`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `jewellery`
 --
 ALTER TABLE `jewellery`
@@ -331,19 +351,25 @@ ALTER TABLE `addproduct`
 -- AUTO_INCREMENT for table `admin_reg`
 --
 ALTER TABLE `admin_reg`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `booked`
 --
 ALTER TABLE `booked`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT for table `feedback-form`
+--
+ALTER TABLE `feedback-form`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `jewellery`

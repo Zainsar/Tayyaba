@@ -20,6 +20,11 @@ if (isset($_GET['pid'])) {
 } else {
     $pro_id = 1;
 }
+if (isset($_SESSION['userid'])) {
+    $userid = $_SESSION['userid'];
+} else {
+    $userid = '';
+}
 $productsfetch = "SELECT * from addproduct WHERE `pid` = '$pro_id'";
 $runquery = mysqli_query($connection, $productsfetch);
 if (mysqli_num_rows($runquery) > 0) {
@@ -32,8 +37,8 @@ if (mysqli_num_rows($runquery) > 0) {
                 </div>
                 <div class="row">
                     <div class="col-lg-6 mb-5 ftco-animate">
-                        <input type="hidden" id="userid" value="<?php echo $_SESSION['userid'] ?>">
-                        <input type="hidden" id="proid" value="<?php echo $row['pid'] ?>">
+                        <input type="hidden" id="userid" value="<?php echo $userid ?>">
+                        <input type="hidden" id="proid" value="<?php echo $row['pid']; ?>">
                         <div class="item"><img src="<?php echo 'images/' . $row['pimage']; ?>" alt="" class="img-responsive"
                                 name="product-image"></div>
                     </div>
@@ -66,8 +71,8 @@ if (mysqli_num_rows($runquery) > 0) {
                         </div>
                         <br>
 
-                        <input type="submit" value="Add to Cart" class="btn btn-primary" id="addtocart" name="add_to_cart"
-                            ><span class="bag"></span>
+                        <input type="submit" value="Add to Cart" class="btn btn-primary" id="addtocart" name="add_to_cart"><span
+                            class="bag"></span>
                     </div>
                 </div>
             </div>

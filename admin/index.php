@@ -1,7 +1,8 @@
 <?php
 
-require("navbar.php");
 include('../includes/config.php');
+include('sidebar.php');
+include('navbar.php');
 
 $db_admin = "SELECT * FROM `admin_reg`";
 $fetch = mysqli_query($connection,$db_admin);

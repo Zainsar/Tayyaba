@@ -1,14 +1,12 @@
 <?php
 require('../includes/config.php');
+include('sidebar.php');
+include('navbar.php');
 // include('header.php');
 
-$view = "SELECT * FROM `addproduct` as p INNER JOIN `addcat` as c on p.pcategory = c.id where p.status = '0'";
-$con_view = mysqli_query($connection , $view);
-
- if( mysqli_num_rows($con_view) > 0){
 ?>
 
- 
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,8 +24,9 @@ $con_view = mysqli_query($connection , $view);
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -54,27 +53,16 @@ $con_view = mysqli_query($connection , $view);
         <!-- Spinner End -->
 
 
-        <!-- Sidebar Start -->
-       <?php
-       include('sidebar.php');
-       ?>
-
-        <!-- Sidebar End -->
 
 
         <!-- Content Start -->
         <div class="content">
-            <!-- Navbar Start -->
-             <?php
-             include('navbar.php');
-             ?>
-            <!-- Navbar End -->
 
 
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                      <div class="col-12">
+                    <div class="col-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Products Table With its Categories</h6>
                             <div class="table-responsive">
@@ -91,34 +79,54 @@ $con_view = mysqli_query($connection , $view);
                                         </tr>
                                     </thead>
                                     <tbody>
-                                     <?php
-                                     while($pro_up = mysqli_fetch_assoc($con_view)){
-                                     ?>
-
-                                        <tr>
-                                            <td><?php echo $pro_up['pid'];?></td>
-                                            <td><?php echo $pro_up['ptitle'];?></td>
-                                            <td><?php echo $pro_up['pdescription'];?></td>
-                                            <td><?php echo $pro_up['pcategory'];?></td>
-                                            <td><?php echo $pro_up['pprice'];?></td>
-                                            <td> 
-                                                <img src="<?php echo '../images/' . $pro_up['pimage'];?>" alt=""height="50px" width="70px">
-                                            </td>
-                                            <?php
-                                            if($pro_up['status'] == 0){
-                                            ?>
-                                            <td><?php echo "De-Active" ?></td>
-                                            <?php
-                                            }
-                                            ?>
-                                            <td><a href="restorepro.php?id=<?php echo $pro_up['pid'];?>" class="btn btn-warning">Restore</a> 
-                                                <a href="deletepro.php?id=<?php echo $pro_up['pid'];?>" class="btn btn-primary ">Delete</a></td>
-                                            <!-- <td>Member</td> -->
-                                        </tr>
-                                        
                                         <?php
+                                        $view = "SELECT * FROM `addproduct` as p INNER JOIN `addcat` as c on p.pcategory = c.id where p.status = '0'";
+                                        $con_view = mysqli_query($connection, $view);
+
+                                        if (mysqli_num_rows($con_view) > 0) {
+                                            while ($pro_up = mysqli_fetch_assoc($con_view)) {
+                                                ?>
+
+                                                <tr>
+                                                    <td>
+                                                        <?php echo $pro_up['pid']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $pro_up['ptitle']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $pro_up['pdescription']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $pro_up['pcategory']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $pro_up['pprice']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <img src="<?php echo '../images/' . $pro_up['pimage']; ?>" alt=""
+                                                            height="50px" width="70px">
+                                                    </td>
+                                                    <?php
+                                                    if ($pro_up['status'] == 0) {
+                                                        ?>
+                                                        <td>
+                                                            <?php echo "De-Active" ?>
+                                                        </td>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                    <td><a href="restorepro.php?id=<?php echo $pro_up['pid']; ?>"
+                                                            class="btn btn-warning">Restore</a>
+                                                        <a href="deletepro.php?id=<?php echo $pro_up['pid']; ?>"
+                                                            class="btn btn-primary ">Delete</a>
+                                                    </td>
+                                                    <!-- <td>Member</td> -->
+                                                </tr>
+
+                                                <?php
+                                            }
                                         }
-                                    }
 
                                         ?>
                                     </tbody>

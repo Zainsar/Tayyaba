@@ -65,14 +65,14 @@ include('includes/navbar.php');
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="firstname">First Name</label>
-								<input type="text" class="form-control" placeholder="" name="firstname">
+								<input type="text" class="form-control" placeholder="" name="firstname" required>
 							</div>
 						</div>
 
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="lastname">Last Name</label>
-								<input type="text" class="form-control" placeholder="" name="lastname">
+								<input type="text" class="form-control" placeholder="" name="lastname" required>
 							</div>
 						</div>
 						<br>
@@ -115,14 +115,14 @@ include('includes/navbar.php');
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="towncity">Town / City</label>
-								<input type="text" name="city" class="form-control" placeholder="">
+								<input type="text" name="city" class="form-control" placeholder="" required>
 							</div>
 						</div>
 						<br>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="postcodezip">Postcode / ZIP *</label>
-								<input type="text" class="form-control" name="postal" placeholder="">
+								<input type="text" class="form-control" name="postal" placeholder="" required>
 							</div>
 						</div>
 						<br>
@@ -130,15 +130,15 @@ include('includes/navbar.php');
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="phone">Phone</label>
-								<input type="text" class="form-control" placeholder="" name="phone">
+								<input type="text" class="form-control" placeholder="" name="phone" required>
 							</div>
 						</div>
 						<br>
-						
+
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="emailaddress">Email Address</label>
-								<input type="text" class="form-control" placeholder="" name="email">
+								<input type="text" class="form-control" placeholder="" name="email" required>
 							</div>
 						</div>
 						<br>
@@ -147,7 +147,8 @@ include('includes/navbar.php');
 						<div class="col-md-12">
 							<div class="form-group mt-4">
 								<div class="radio">
-									<p><input type="submit" name="submit" class="btn btn-primary py-3 px-4" value="Place an Order"></p>
+									<p><input type="submit" name="submit" class="btn btn-primary py-3 px-4"
+											value="Place an Order"></p>
 
 									<br>
 									<br>

@@ -12,5 +12,3 @@ if (!$res) {
 }
 header('location:viewcategory.php');
 ?>
-
-
