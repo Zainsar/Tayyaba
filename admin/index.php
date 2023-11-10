@@ -1,7 +1,6 @@
 <?php
 
 include('../includes/config.php');
-include('sidebar.php');
 include('navbar.php');
 
 $db_admin = "SELECT * FROM `admin_reg`";
@@ -51,13 +50,6 @@ if(mysqli_num_rows($fetch) > 0){
             </div>
         </div>
         <!-- Spinner End -->
-
-
-        <!-- Sidebar Start -->
- <?php
- include('sidebar.php');
- ?>
-        <!-- Sidebar End -->
 
         <!-- Content Start -->
         <div class="content">

@@ -1,6 +1,5 @@
 <?php
 require('../includes/config.php');
-require('sidebar.php');
 require('navbar.php');
 // include('header.php');
 ?>

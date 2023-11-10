@@ -1,9 +1,9 @@
 <?php
 include('includes/navbar.php');
 include('includes/config.php');
-
-
 ?>
+
+
 <html>
 <style>
     .slid1 #home-slider #zoom1 img {
@@ -469,15 +469,19 @@ include('includes/config.php');
                         </div>
                     </div>
                 </div>
+                </div> <!-- Content -->  
+            
+          
+                       
 
-            </div> <!-- Content -->
+
+    
+                                          
+            <br>
+            <br>
             <?php
             include('includes/footer.php')
                 ?>
-
-
-
-
 
 
             <!-- <script>

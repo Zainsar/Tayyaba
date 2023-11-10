@@ -1,7 +1,6 @@
 <?php
 require('../includes/config.php');
 require('navbar.php');
-require('sidebar.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,6 +1,5 @@
 <?php
 require('../includes/config.php');
-include('sidebar.php');
 include('navbar.php');
 if (isset($_POST['submit'])) {
     $cat_name = $_POST['cname'];
@@ -65,13 +64,6 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
         <!-- Spinner End -->
-
-
-        <!-- Sidebar Start -->
-        <?php
-
-        ?>
-        <!-- Sidebar End -->
 
 
         <!-- Content Start -->

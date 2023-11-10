@@ -2,6 +2,13 @@
 include('includes/navbar1.php');
 include('includes/config.php');
 
+require 'vendor/autoload.php'; // Composer se install kiya hua ho to yeh line add karein
+// PHPMailer Integration
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+
 if (isset($_POST['register'])) {
   $username = mysqli_real_escape_string($connection, $_POST['username']);
   $email = mysqli_real_escape_string($connection, $_POST['email']);
@@ -14,16 +21,39 @@ if (isset($_POST['register'])) {
   if (mysqli_num_rows($result) > 0) {
     echo "<script> alert('email already exist'); </script>";
   } else {
+    // User ka email address $user_email variable mein store karein
+    $user_email = $email;
+
+    // PHPMailer configuration
+    $mail = new PHPMailer(true);
+    try {
+      // Server settings
+      $mail->isSMTP();
+      $mail->Host = 'smtp.gmail.com'; // SMTP server
+      $mail->SMTPAuth = true;
+      $mail->Username = 'zainsarfraz745@gmail.com'; // Sender's email address
+      $mail->Password = 'lkqe avoe gwnx xdcr';
+      $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // TLS encryption
+      $mail->Port = 587; // Port for TLS
+
+      // Recipient settings
+      $mail->setFrom('zainsarfraz745@gmail.com', 'Zain');
+      $mail->addAddress($user_email, $username); // User ka email address
+
+      // Email content
+      $mail->isHTML(true);
+      $mail->Subject = 'Welcome to Our Website';
+      $mail->Body = 'Thank you for registering on our website.';
+
+      $mail->send();
+    } catch (Exception $e) {
+      echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
     $insert_query = "INSERT INTO `user-register` (`username`, `email`, `password`) VALUES ('$username', '$email', '$password')";
     $conn_insert = mysqli_query($connection, $insert_query);
     echo '<script> window.location.href="login.php" </script>';
 
-
-
   }
-
-
-
 }
 ?>
 <html>

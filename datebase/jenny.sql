@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2023 at 04:25 PM
+-- Generation Time: Nov 10, 2023 at 09:15 PM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -68,27 +68,27 @@ INSERT INTO `addproduct` (`pid`, `ptitle`, `pdescription`, `pcategory`, `pprice`
 (2, 'Jhumka', 'Most attractive product', 2, '888', 'j1.jpg', 1),
 (3, 'Gold Rings', 'very attractive ', 2, '888', 'j3.webp', 1),
 (4, 'silver stone  set', 'Most attractive product', 2, '888', 'j8.webp', 1),
-(5, 'clipearing', 'autofishal', 2, '$20', 'j20.jpg', 1),
-(7, 'Bangles', 'Mostly in silver , gold   ', 2, '11K', 'j4.webp', 1),
-(18, 'Set of lipsticks', 'Mostly in  (Multiple shades)', 1, '11K', 'c5.jpg', 1),
-(19, 'Charmacy Lipstick', 'Multiple shades', 1, '88$', 'cos5.webp', 1),
-(20, 'Bunch of blushes', 'Kit is awesome', 1, '11K', 'cos2.jpg', 1),
+(5, 'clipearing', 'autofishal', 2, '20', 'j20.jpg', 1),
+(7, 'Bangles', 'Mostly in silver , gold   ', 2, '11', 'j4.webp', 1),
+(18, 'Set of lipsticks', 'Mostly in  (Multiple shades)', 1, '11', 'c5.jpg', 1),
+(19, 'Charmacy Lipstick', 'Multiple shades', 1, '88', 'cos5.webp', 1),
+(20, 'Bunch of blushes', 'Kit is awesome', 1, '11', 'cos2.jpg', 1),
 (21, 'skin care', 'new beauty product', 1, '09', 'c10.jpg', 1),
 (22, 'brush kit', 'brush set', 1, '05', 'c6.webp', 1),
-(24, 'ring', 'silver', 2, '$11', 'c19.jpg', 1),
-(25, 'earimg', 'gold plated', 2, '$25', 'imagesj7.jpg', 1),
-(26, 'braclet', 'chain with stone', 2, '$15', 'c20.jpg', 1),
-(27, 'neckless', 'silver gold', 2, '$49', 'c16.jpg', 1),
-(28, 'bangles with ring', 'silver stone', 2, '$35', 'imagesj18.webp', 1),
-(30, 'lipstick kit', 'multicolour', 1, '$10', 'cos1.webp', 1),
-(31, 'face powder kit ', 'light & dark shade', 1, '$30', 'c13.jpg', 1),
-(32, 'liner & maskara', 'eye meckup', 1, '$25', 'c12.jpg', 1),
-(33, 'eye shade', 'eye meckup', 1, '$20', 'c7.jpg', 1),
-(34, 'cosmetic kit', 'skin lotion, lipstick, eyeshade etc.', 1, '$25', 'c11.jpg', 1),
-(35, 'silver gold earing', 'silver stone', 2, '$29', 'j14.jpg', 1),
-(36, 'jewellery set', 'silver', 2, '$15', 'imagesj16.jpg', 1),
-(37, 'silver bangless', 'whit stone', 2, '$30', 'c18.jpg', 1),
-(38, 'multi stone ring', 'gold plated', 2, '$15', 'j2.webp', 1),
+(24, 'ring', 'silver', 2, '11', 'c19.jpg', 1),
+(25, 'earimg', 'gold plated', 2, '25', 'imagesj7.jpg', 1),
+(26, 'braclet', 'chain with stone', 2, '15', 'c20.jpg', 1),
+(27, 'neckless', 'silver gold', 2, '49', 'c16.jpg', 1),
+(28, 'bangles with ring', 'silver stone', 2, '35', 'imagesj18.webp', 1),
+(30, 'lipstick kit', 'multicolour', 1, '10', 'cos1.webp', 1),
+(31, 'face powder kit ', 'light & dark shade', 1, '30', 'c13.jpg', 1),
+(32, 'liner & maskara', 'eye meckup', 1, '25', 'c12.jpg', 1),
+(33, 'eye shade', 'eye meckup', 1, '20', 'c7.jpg', 1),
+(34, 'cosmetic kit', 'skin lotion, lipstick, eyeshade etc.', 1, '25', 'c11.jpg', 1),
+(35, 'silver gold earing', 'silver stone', 2, '29', 'j14.jpg', 1),
+(36, 'jewellery set', 'silver', 2, '15', 'imagesj16.jpg', 1),
+(37, 'silver bangless', 'whit stone', 2, '30', 'c18.jpg', 1),
+(38, 'multi stone ring', 'gold plated', 2, '15', 'j2.webp', 1),
 (39, 'chain locket', 'silver gold', 2, '$20', 'imagesj9.jpg', 1),
 (40, 'small clip earing', 'silver stone with  gold', 2, '$50', 'j21.jpg', 1),
 (41, 'eyeliner kit', 'eye meckup', 1, '$15', 'c24.webp', 1),
@@ -163,7 +163,8 @@ CREATE TABLE `booked` (
 --
 
 INSERT INTO `booked` (`id`, `First Name`, `Last Name`, `Country`, `address`, `Appartment`, `city`, `postal`, `phone`, `email`, `status`) VALUES
-(12, 'Zain', 'Sarfraz', 'Pakistan', 'House No L-354 Sector5/C/3 North Karachi', '', 'karachi', 75850, 2147483647, 'zainsarfraz82@gmail.com', 1);
+(12, 'Zain', 'Sarfraz', 'Pakistan', 'House No L-354 Sector5/C/3 North Karachi', '', 'karachi', 75850, 2147483647, 'zainsarfraz82@gmail.com', 1),
+(13, 'saweraansari', 'ansari', 'Pakistan', '424,06 karachi', 'qwerty', 'karachi', 1234, 1234589, 'saw@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -187,7 +188,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cartid`, `userid`, `proid`, `cartqty`, `cartstatus`, `cartdate`, `carttime`, `updatestatus`) VALUES
-(25, 11, 2, 2, 1, '2023-11-10 11:40:23', '11:40:23', 'Pending'),
+(25, 11, 2, 2, 0, '2023-11-10 11:40:23', '11:40:23', 'Pending'),
 (26, 11, 4, 1, 1, '2023-11-10 11:57:45', '11:57:45', 'pending'),
 (27, 11, 5, 1, 1, '2023-11-10 12:31:55', '12:31:55', 'pending'),
 (29, 14, 18, 3, 0, '2023-11-10 17:05:37', '17:05:37', 'Pending'),
@@ -207,6 +208,15 @@ CREATE TABLE `feedback-form` (
   `phone_number` int(255) NOT NULL,
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `feedback-form`
+--
+
+INSERT INTO `feedback-form` (`id`, `first_name`, `last_name`, `email`, `phone_number`, `message`) VALUES
+(1, 'saweraansari', 'ansari', 'saw@gmail.com', 1234589, 'jskwadskl'),
+(2, 'tayyaba', 'muslim', 'muslimtayyaba@gmail.com', 123344, 'gud'),
+(3, 'Tayyaba', 'muslim', 'muslimtayyaba@gmail.com', 12345678, 'excellent');
 
 -- --------------------------------------------------------
 
@@ -357,19 +367,19 @@ ALTER TABLE `admin_reg`
 -- AUTO_INCREMENT for table `booked`
 --
 ALTER TABLE `booked`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `feedback-form`
 --
 ALTER TABLE `feedback-form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `jewellery`

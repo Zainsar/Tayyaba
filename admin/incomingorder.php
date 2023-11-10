@@ -1,7 +1,7 @@
 <?php
 require('../includes/config.php');
 require('navbar.php');
-require('sidebar.php');
+
 $cart_data = "SELECT * from cart AS c INNER JOIN `user-register` AS user ON c.userid = user.id INNER JOIN addproduct AS p ON p.pid = c.proid";
 $con_view = mysqli_query($connection, $cart_data);
 

@@ -108,7 +108,7 @@ session_start();
                                         <li><a href="register.php">Register</a></li>
                                         <li><a href="login.php">Login</a></li>
 
-                                    <?php
+                                        <?php
                                     } else {
                                         ?>
                                         <li class="active"><a href="index.php">Home <span
@@ -122,7 +122,7 @@ session_start();
 
 
 
-                                    <?php
+                                        <?php
                                     }
                                     ?>
                                 </ul>

@@ -244,7 +244,7 @@ if (isset($_POST['submit'])) {
                         <h3 class="sub-title comment">Feedback</h3>
                         <div class="row">
                             <div class="col-md-8">
-                                <form class="comment-form">
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"class="comment-form">
                                     <div class="form-group">
                                         <input type="hidden" class="form-control" name="id" id="id" placeholder="">
                                     </div>
@@ -275,7 +275,7 @@ if (isset($_POST['submit'])) {
                                         <textarea class="form-control" name="message" id="message"></textarea>
                                     </div>
 
-                                    <button type="submit" value="submit" name="submit"
+                                    <button type="submit"name="submit"
                                         class="btn btn-blue">Submit</button>
                                 </form>
                             </div>
@@ -288,6 +288,7 @@ if (isset($_POST['submit'])) {
     </div>
 
 </div> <!-- Content -->
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 

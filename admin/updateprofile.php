@@ -1,7 +1,6 @@
 <?php
 require('../includes/config.php');
 require('navbar.php');
-require('sidebar.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,9 +67,8 @@ require('sidebar.php');
                                         <form action="backends.php" method="post" class="form-group"
                                             enctype="multipart/form-data">
                                             <div class="mb-3">
-                                                <img class="rounded-circle me-lg-2"
-                                                    src="<?php echo '../includes/imgs/' . $row['images'] ?>" alt=""
-                                                    style="width: 40px; height: 40px;">
+                                                <img src="<?php echo '../includes/imgs/' . $result1['images'] ?>" alt="Admin"
+                                                    class="rounded-circle" width="150">
                                                 <br><br>
                                                 <label for="exampleInputEmail1" class="form-label">Name</label>
                                                 <input type="hidden" name="id" class="form-control"

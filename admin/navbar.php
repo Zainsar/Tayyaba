@@ -84,7 +84,7 @@ $result1 = mysqli_fetch_assoc($result);
     <div class="navbar-nav align-items-center ms-auto">
         <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <img src="<?php echo '../includes/img/' . $result1['images'] ?>" alt="" height="40px" width="40px"
+                <img src="<?php echo '../includes/imgs/' . $result1['images'] ?>" alt="" height="40px" width="40px"
                     style="border-radius: 200px; border:2px solid black ;">
                 <span class=" d-lg-inline-flex">
                     <?php echo $result1['name'] ?>
@@ -92,7 +92,7 @@ $result1 = mysqli_fetch_assoc($result);
             </a>
             <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                 <a href="myprofile.php" class="dropdown-item" style="color: red;">My Profile</a>
-                <a href="#" class="dropdown-item" style="color: red;">Settings</a>
+                <a href="updatepassword.php" class="dropdown-item" style="color: red;">Update Password</a>
                 <a href="logout.php" class="dropdown-item" style="color: red;">Log Out</a>
             </div>
         </div>

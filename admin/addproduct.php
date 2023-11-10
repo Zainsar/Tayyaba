@@ -79,14 +79,6 @@ if (isset($_POST['submit'])) {
         </div>
         <!-- Spinner End -->
 
-
-        <!-- Sidebar Start -->
-        <?php
-        include('sidebar.php');
-        ?>
-        <!-- Sidebar End -->
-
-
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->

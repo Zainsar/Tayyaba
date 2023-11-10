@@ -3,7 +3,6 @@ require('../includes/config.php');
 
 include('navbar.php');
 
-include('sidebar.php');
 $username = $_SESSION["admin"];
 $query = "SELECT * FROM `admin_reg` WHERE `email` = '$username'";
 $result = mysqli_query($connection, $query);
