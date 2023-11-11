@@ -12,14 +12,18 @@ if (isset($_POST['Login'])) {
     $row = mysqli_fetch_assoc($get_from_db);
     $db_pass = $row['password'];
     $pass_decode = password_verify($user_pass, $db_pass);
+    if ($pass_decode) {
     $_SESSION["userid"] = $row['id'];
     $_SESSION["useremail"] = $row['email'];
     $_SESSION["username"] = $row['username'];
     echo '<script> window.location.href="index.php" </script>';
   } else {
-    echo "<script> alert('Invalid Email/password'); </script>";
-
+    echo "<script> alert('Invalid password'); </script>";
+    
   }
+}else{
+  echo "<script> alert('Invalid Email'); </script>";
+}
 
 
 }

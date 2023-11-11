@@ -13,7 +13,7 @@ $result1 = mysqli_fetch_assoc($result);
 <div class="sidebar pe-4 pb-3">
     <nav class="navbar bg-secondary navbar-dark">
         <a href="index.php" class="navbar-brand mx-4 mb-3">
-            <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>J's Cosmetics </h3>
+            <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i></h3>
         </a>
         <div class="d-flex align-items-center ms-4 mb-4">
             <div class="position-relative">
@@ -72,13 +72,13 @@ $result1 = mysqli_fetch_assoc($result);
 </div>
 
 <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-    <a href="index.php" class="navbar-brand d-flex d-lg-none me-4">
-        <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+    <a href="index.php" class="navbar-brand d-flex me-4">
+        <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>J's Cosmetics </h3>
     </a>
     <a href="#" class="sidebar-toggler flex-shrink-0">
         <i class="fa fa-bars"></i>
     </a>
-    <form class="d-lg mt-3" style="margin-left: 250px;">
+    <form class="col-md-3 mt-3" style="margin-left: 50px;">
         <input class="form-control bg-dark border-0" type="search" placeholder="Search">
     </form>
     <div class="navbar-nav align-items-center ms-auto">

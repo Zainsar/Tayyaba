@@ -21,6 +21,10 @@ if (mysqli_num_rows($con_view) > 0) {
         <meta content="" name="keywords">
         <meta content="" name="description">
 
+        <!-- Data Table -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
         <!-- Favicon -->
         <link href="img/favicon.ico" rel="icon">
 
@@ -69,7 +73,8 @@ if (mysqli_num_rows($con_view) > 0) {
                                     <br>
                                     <div class="clearfix"></div>
                                     <div class="table-responsive">
-                                        <table class="table table-bordered text-white table-hover mb-0">
+                                        <table id="example"
+                                            class="display nowrap table table-bordered text-white table-hover mb-0">
                                             <thead class="text-secondary bg-white">
                                                 <tr>
                                                     <!-- <th scope="col">Products_ID</th> -->
@@ -137,12 +142,12 @@ if (mysqli_num_rows($con_view) > 0) {
                 <!-- Table End -->
 
 
-                <!-- Footer Start -->
-                <?php
-                include('footer.php');
-                ?>
-                <!-- Footer End -->
             </div>
+            <!-- Footer Start -->
+            <?php
+            include('footer.php');
+            ?>
+            <!-- Footer End -->
             <!-- Content End -->
 
 

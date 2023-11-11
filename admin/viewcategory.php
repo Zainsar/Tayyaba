@@ -21,6 +21,10 @@ if (mysqli_num_rows($cat_query) > 0) {
         <!-- Favicon -->
         <link href="img/favicon.ico" rel="icon">
 
+        <!-- Data Table -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,7 +72,8 @@ if (mysqli_num_rows($cat_query) > 0) {
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table table-bordered text-white table-hover mb-0">
+                                    <table id="example"
+                                        class="display nowrap table table-bordered text-white table-hover mb-0">
                                         <thead class="text-secondary bg-white">
                                             <tr>
                                                 <th scope="col">Categories_ID</th>

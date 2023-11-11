@@ -27,6 +27,7 @@ session_start();
     <link href="style.css" rel="stylesheet">
     <link href="responsive.css" rel="stylesheet">
 
+
     <!-- Slider -->
     <link href="css/owl.carousel.css" rel="stylesheet">
     <link href="css/owl.theme.css" rel="stylesheet">
@@ -44,6 +45,39 @@ session_start();
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        /* Style for the dropdown menu */
+        .dropdown-menu {
+            background-color: #fff;
+            /* Change the background color */
+            border: 1px solid #ccc;
+            /* Add a border */
+            border-radius: 0;
+            /* Remove border-radius if you want it completely squared */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Add a subtle box shadow */
+        }
+
+        /* Style for the dropdown items */
+        .dropdown-item {
+            color: #333;
+            /* Change text color */
+            padding: 10px 20px;
+            /* Add padding to the items */
+            text-decoration: none;
+            /* Remove underlines from links */
+            display: block;
+            /* Make the items a block element */
+            transition: background-color 0.3s;
+            /* Add a smooth transition for background color changes */
+        }
+
+        /* Hover effect for dropdown items */
+        .dropdown-item:hover {
+            background-color: #f0f0f0;
+            /* Change the background color on hover */
+        }
+    </style>
 </head>
 
 <body bgcolor="white">
@@ -118,7 +152,34 @@ session_start();
                                         <li><a href="products.php">products</a></li>
                                         <li><a href="vieworder.php">View Bill</a></li>
                                         <li><a href="cart.php"><img src="images/bag.png" alt="bag"><span></span></a></li>
-                                        <li><a href="logout.php">Logout</a></li>
+                                        <?php
+                                        require("config.php");
+                                        $username = $_SESSION["useremail"];
+                                        $query = "SELECT * FROM `user-register` WHERE `email` = '$username'";
+                                        $result = mysqli_query($connection, $query);
+                                        $result1 = mysqli_fetch_assoc($result);
+                                        ?>
+                                        <div class="navbar-nav align-items-center ms-auto" style="margin-left: 20px;">
+                                            <div class="nav-item dropdown">
+                                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                                    <img src="<?php echo 'userimgs/' . $result1['images'] ?>" alt=""
+                                                        height="40px" width="40px"
+                                                        style="border-radius: 200px; border:2px solid black ;">
+                                                    <span class=" d-lg-inline-flex"
+                                                        style="color: black; font-style: italic; font-weight: 700; font-size: 20px;">
+                                                        <?php echo $result1['username'] ?>
+                                                    </span>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end border-0 rounded-0 rounded-bottom m-0"
+                                                    style="margin-top: 4px;">
+                                                    <a href="myprofile.php" class="dropdown-item">My Profile</a>
+                                                    <br>
+                                                    <a href="updatepassword.php" class="dropdown-item">Update Password</a>
+                                                    <br>
+                                                    <a href="logout.php" class="dropdown-item">Log Out</a>
+                                                </div>
+                                            </div>
+                                        </div>
 
 
 

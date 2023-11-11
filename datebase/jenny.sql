@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2023 at 09:47 AM
+-- Generation Time: Nov 11, 2023 at 03:31 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -124,7 +124,7 @@ CREATE TABLE `admin_reg` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `phone` int(255) NOT NULL,
+  `phone` text NOT NULL,
   `images` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -133,10 +133,7 @@ CREATE TABLE `admin_reg` (
 --
 
 INSERT INTO `admin_reg` (`id`, `name`, `email`, `password`, `phone`, `images`) VALUES
-(1, 'talha', 'muhammadtalha.aptech2006@gmail.com', '$2y$10$2122xI6lqR1wXS1sU/Osgek9DilhJ5KCyokRKB1WdOnLAt/RWslTO', 789456, ''),
-(2, 'sadia', 'sadiabader433@gmail.com', '$2y$10$r29xLVTSIOeMiQBco5fPHupxUA77btKhKB/chAc9xL/oLUgLIivP2', 2147483647, ''),
-(3, 'Tayyaba muslim', 'muslimtayyaba@gmail.com', '$2y$10$wDI44wBQUyPsBmKVzfMahe/mKM9sSy671OGszI/yxkaTY6YrHgAUq', 123456, ''),
-(4, 'Zain Sarfraz', 'zainsarfraz82@gmail.com', '$2y$10$E94X3Y.CC5XnHG26znQjeOZoabbNM.zDcM2I5SwUlg98HCXFaN.b2', 2147483647, 'mine pic.jpg');
+(1, 'Zain Sarfraz', 'zainsarfraz82@gmail.com', '$2y$10$E94X3Y.CC5XnHG26znQjeOZoabbNM.zDcM2I5SwUlg98HCXFaN.b2', '03172667345', 'mine pic.jpg');
 
 -- --------------------------------------------------------
 
@@ -146,6 +143,7 @@ INSERT INTO `admin_reg` (`id`, `name`, `email`, `password`, `phone`, `images`) V
 
 CREATE TABLE `booked` (
   `id` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
   `First Name` varchar(255) NOT NULL,
   `Last Name` varchar(255) NOT NULL,
   `Country` varchar(255) NOT NULL,
@@ -153,18 +151,10 @@ CREATE TABLE `booked` (
   `Appartment` varchar(255) NOT NULL,
   `city` varchar(255) NOT NULL,
   `postal` int(6) NOT NULL,
-  `phone` int(12) NOT NULL,
+  `phone` text NOT NULL,
   `email` varchar(255) NOT NULL,
   `status` tinyint(255) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `booked`
---
-
-INSERT INTO `booked` (`id`, `First Name`, `Last Name`, `Country`, `address`, `Appartment`, `city`, `postal`, `phone`, `email`, `status`) VALUES
-(12, 'Zain', 'Sarfraz', 'Pakistan', 'House No L-354 Sector5/C/3 North Karachi', '', 'karachi', 75850, 2147483647, 'zainsarfraz82@gmail.com', 1),
-(13, 'saweraansari', 'ansari', 'Pakistan', '424,06 karachi', 'qwerty', 'karachi', 1234, 1234589, 'saw@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -183,15 +173,6 @@ CREATE TABLE `cart` (
   `updatestatus` varchar(255) NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cartid`, `userid`, `proid`, `cartqty`, `cartstatus`, `cartdate`, `carttime`, `updatestatus`) VALUES
-(25, 11, 2, 2, 0, '2023-11-10 11:40:23', '11:40:23', 'Pending'),
-(26, 11, 4, 1, 1, '2023-11-10 11:57:45', '11:57:45', 'pending'),
-(27, 11, 5, 1, 1, '2023-11-10 12:31:55', '12:31:55', 'pending');
-
 -- --------------------------------------------------------
 
 --
@@ -206,16 +187,6 @@ CREATE TABLE `feedback-form` (
   `phone_number` int(255) NOT NULL,
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `feedback-form`
---
-
-INSERT INTO `feedback-form` (`id`, `first_name`, `last_name`, `email`, `phone_number`, `message`) VALUES
-(1, 'saweraansari', 'ansari', 'saw@gmail.com', 1234589, 'jskwadskl'),
-(2, 'tayyaba', 'muslim', 'muslimtayyaba@gmail.com', 123344, 'gud'),
-(3, 'Tayyaba', 'muslim', 'muslimtayyaba@gmail.com', 12345678, 'excellent'),
-(4, 'Zain', 'Sarfraz', 'zainsarfraz82@gmail.com', 2147483647, 'Amazing Website');
 
 -- --------------------------------------------------------
 
@@ -271,21 +242,16 @@ CREATE TABLE `user-register` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `images` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user-register`
 --
 
-INSERT INTO `user-register` (`id`, `username`, `email`, `password`) VALUES
-(10, 'sawera ansari', 'saw@gmail.com', '$2y$10$1PzUTp2SFpp8vGWGbdsO6uJqR2H2Hb7HniEL.02u4ftCvLXJK9jf.'),
-(11, 'midhat@gmail.com', 'mid@gmail.com', '$2y$10$Ivo55pM0PdZLFT5.w5IrVOiRA.YEKy55CblzOk4.WE8NeGyKYe2Em'),
-(12, 'sadia', 'sadia@gmail.com', '$2y$10$d/26d2f6mPRUcHq50vLUmulxJ5noZVY9bFbN6a/8tGQELQJFd0Ihu'),
-(13, 'abc', 'abc@gmail. com', '$2y$10$lHZ/uLONZyib3yecBmdcGOOICgfBh4k7c1sj0LW9Hto3nH6TXyOFu'),
-(15, 'Syed Muhammad Zain Sarfraz', 'zainsarfraz424@gmail.com', '$2y$10$7htf.P5mATz6OHs0Tp5jfe4Wx7wIL6CXDK.8SOmpNjiuJbxIqcmMq'),
-(18, 'Syed Muhammad Zain Sarfraz', 'syedmuhammadzainsarfraz@gmail.com', '$2y$10$vxR9prJLS8e2VRPLPOb.DedY1wTyfmo90d0EMnuekjvEnVKGS/.OC'),
-(19, 'zainsarfraz', 'zainsarfraz82@gmail.com', '$2y$10$eL0Vec3uAGlnOPmvdLGWJ.T49V.DargeBZw/OIMlYmZsrRkoEAPkO');
+INSERT INTO `user-register` (`id`, `username`, `email`, `password`, `images`) VALUES
+(1, 'zainsarfraz', 'zainsarfraz82@gmail.com', '$2y$10$T3hG475uVVdEcDWFn6p.IuvdGrmFWxe9XqttwFwP2jPRicRapke8a', 'IMG-20221010-WA0004.jpg');
 
 --
 -- Indexes for dumped tables
@@ -314,7 +280,8 @@ ALTER TABLE `admin_reg`
 -- Indexes for table `booked`
 --
 ALTER TABLE `booked`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `foriegnkey` (`userid`);
 
 --
 -- Indexes for table `cart`
@@ -362,25 +329,25 @@ ALTER TABLE `addproduct`
 -- AUTO_INCREMENT for table `admin_reg`
 --
 ALTER TABLE `admin_reg`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `booked`
 --
 ALTER TABLE `booked`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `feedback-form`
 --
 ALTER TABLE `feedback-form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `jewellery`
@@ -392,7 +359,7 @@ ALTER TABLE `jewellery`
 -- AUTO_INCREMENT for table `user-register`
 --
 ALTER TABLE `user-register`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -403,6 +370,12 @@ ALTER TABLE `user-register`
 --
 ALTER TABLE `addproduct`
   ADD CONSTRAINT `addproduct_ibfk_1` FOREIGN KEY (`pcategory`) REFERENCES `addcat` (`id`);
+
+--
+-- Constraints for table `booked`
+--
+ALTER TABLE `booked`
+  ADD CONSTRAINT `foriegnkey` FOREIGN KEY (`userid`) REFERENCES `user-register` (`id`);
 
 --
 -- Constraints for table `cart`

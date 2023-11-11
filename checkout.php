@@ -50,7 +50,13 @@ include('includes/navbar.php');
 		</div>
 	</div>
 </div>
-
+<?php
+if (isset($_SESSION['userid'])) {
+	$userid = $_SESSION['userid'];
+} else {
+	$userid = '';
+}
+?>
 <section class="ftco-section" style="background:black; color: white;">
 	<div class="container">
 		<div class="row">
@@ -65,6 +71,7 @@ include('includes/navbar.php');
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="firstname">First Name</label>
+								<input type="hidden" id="userid" name="userid" value="<?php echo $userid ?>">
 								<input type="text" class="form-control" placeholder="" name="firstname" required>
 							</div>
 						</div>

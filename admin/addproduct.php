@@ -1,4 +1,5 @@
 <?php
+include('navbar.php');
 require('../includes/config.php');
 // include('header.php');
 if (isset($_POST['submit'])) {
@@ -81,115 +82,113 @@ if (isset($_POST['submit'])) {
 
         <!-- Content Start -->
         <div class="content">
-            <!-- Navbar Start -->
-            <?php
-            include('navbar.php');
-            ?>
-            <!-- Navbar End -->
-
             <!-- Add Category -->
             <div class="container-fluid">
-                <!-- <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
-                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                    <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3"> -->
+                <div class="row h-100  justify-content-center">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
 
-                <h3 class="text-primary">Add Product</h3>
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+                            <h3 class="text-primary">Add Product</h3>
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"
+                                enctype="multipart/form-data">
 
-                    <div class="form-floating mb-3">
-                        <input type="hidden" name="pid" class="form-control" id="floatingText" placeholder="Prouct ID">
-                        <label for="pid">Products IDs</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" name="ptitle" class="form-control" id="floatingText"
-                            placeholder="Prouct Title">
-                        <label for="ptitle">Product title</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" name="pdesc" class="form-control" id="floatingInput"
-                            placeholder="Product Discription">
-                        <label for="pdesc">Product description</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <!-- <label for="Category"> Category </label> -->
-                        <br>
-                        <?php
-                        $products = "SELECT * from `addcat`";
-                        $result1 = mysqli_query($connection, $products);
-                        if (mysqli_num_rows($result1) > 0) {
-                            ?>
-                            <select class="form-select col-md-12" name="pcat" aria-label="Default select example">
-                                <h3 selected>Select Category</h3>
-                                <?php
-                                while ($row = mysqli_fetch_assoc($result1)) {
-                                    ?>
-                                    <option value="<?php echo $row['id'] ?>">
-                                        <?php echo $row['name'] ?>
-                                    </option>
+                                <div class="form-floating mb-3">
+                                    <input type="hidden" name="pid" class="form-control" id="floatingText"
+                                        placeholder="Prouct ID">
+                                    <label for="pid">Products IDs</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="ptitle" class="form-control" id="floatingText"
+                                        placeholder="Prouct Title">
+                                    <label for="ptitle">Product title</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="pdesc" class="form-control" id="floatingInput"
+                                        placeholder="Product Discription">
+                                    <label for="pdesc">Product description</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <!-- <label for="Category"> Category </label> -->
                                     <?php
-                                }
-                        }
-                        ?>
-                        </select>
-                    </div>
-                    <div class="form-floating mb-4">
-                        <input type="text" name="pprice" class="form-control" id="floatingPrice"
-                            placeholder="Product price">
-                        <label for="cdesc">Product price</label>
-                    </div>
+                                    $products = "SELECT * from `addcat`";
+                                    $result1 = mysqli_query($connection, $products);
+                                    if (mysqli_num_rows($result1) > 0) {
+                                        ?>
+                                        <select class="form-select col-md-12" name="pcat"
+                                            aria-label="Default select example">
+                                            <h3 selected>Select Category</h3>
+                                            <?php
+                                            while ($row = mysqli_fetch_assoc($result1)) {
+                                                ?>
+                                                <option value="<?php echo $row['id'] ?>">
+                                                    <?php echo $row['name'] ?>
+                                                </option>
+                                                <?php
+                                            }
+                                    }
+                                    ?>
+                                    </select>
+                                </div>
+                                <div class="form-floating mb-4">
+                                    <input type="text" name="pprice" class="form-control" id="floatingPrice"
+                                        placeholder="Product price">
+                                    <label for="cdesc">Product price</label>
+                                </div>
 
-                    <style>
-                        .addFile {
-                            padding: 20px;
-                            height: 120px;
-                            border: 2px solid red;
-                            border-radius: 20PX;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                        }
-                    </style>
-                    <div class=" mb-4 py-5">
-                        <label for="imgFile">
+                                <style>
+                                    .addFile {
+                                        padding: 20px;
+                                        height: 120px;
+                                        border: 2px solid red;
+                                        border-radius: 20PX;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                    }
+                                </style>
+                                <div class=" mb-4 py-5">
+                                    <label for="imgFile">
 
-                            <div class="addFile">
-                                Upload A Product Image
-                            </div>
-                        </label>
-                        <input type="file" style="display: none;" name="pimage" class="form-control" id="imgFile"
-                            placeholder="Product Image">
-                    </div>
+                                        <div class="addFile">
+                                            Upload A Product Image
+                                        </div>
+                                    </label>
+                                    <input type="file" style="display: none;" name="pimage" class="form-control"
+                                        id="imgFile" placeholder="Product Image">
+                                </div>
 
-                    <!-- <div class="d-flex align-items-center justify-content-between mb-4">
+                                <!-- <div class="d-flex align-items-center justify-content-between mb-4">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
                             </div>
                               <a href="">Forgot Password</a>  
                         </div> -->
-                    <br>
-                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Add Product" name="submit">
-                </form>
-                <!-- </div>
+                                <br>
+                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Add Product"
+                                    name="submit">
+                            </form>
+                            <!-- </div>
                 </div>
             </div> -->
-            </div>
+                        </div>
 
 
 
 
-            <!-- Footer Start -->
-            <?php
-            include('footer.php');
-            ?>
-            <!-- Footer End -->
-        </div>
-        <!-- Content End -->
+                        <!-- Footer Start -->
+                    </div>
+                    <?php
+                    include('footer.php');
+                    ?>
+                    <!-- Footer End -->
+                    <!-- Content End -->
 
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
+                    <!-- Back to Top -->
+                    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i
+                            class="bi bi-arrow-up"></i></a>
+                </div>
 
 
 </body>

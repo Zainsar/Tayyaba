@@ -69,30 +69,31 @@ $result1 = mysqli_fetch_assoc($result);
 
           <div class="row gutters-sm">
             <div class="col-md-4 mb-5">
-              <div class="card">
+              <div class="card bg-secondary">
                 <div class="card-body">
                   <div class="flex-column align-items-center text-center">
                     <img src="<?php echo '../includes/imgs/' . $result1['images'] ?>" alt="Admin" class="rounded-circle"
                       width="150">
                     <div class="mt-3">
-                      <h1 style="color: black;">
+                      <h2>
                         <?php echo $result1['name'] ?>
-                      </h1>
-                      <p class="text-secondary mb-1">Full Stack Developer</p>
+                      </h2>
+                      <p class="text-muted mb-1">Full Stack Developer</p>
                       <p class="text-muted font-size-sm">Karachi, Pakistan</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- start -->
             <div class="col-md-8">
               <div class="card mb-3">
-                <div class="card-body">
+                <div class="card-body bg-secondary">
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Full Name</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="col-sm-9">
                       <?php echo $result1['name'] ?>
                     </div>
                   </div>
@@ -101,7 +102,7 @@ $result1 = mysqli_fetch_assoc($result);
                     <div class="col-sm-3">
                       <h6 class="mb-0">Email</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="col-sm-9">
                       <?php echo $result1['email'] ?>
                     </div>
                   </div>
@@ -110,7 +111,7 @@ $result1 = mysqli_fetch_assoc($result);
                     <div class="col-sm-3">
                       <h6 class="mb-0">Phone</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="col-sm-9">
                       <?php echo $result1['phone'] ?>
                     </div>
                   </div>

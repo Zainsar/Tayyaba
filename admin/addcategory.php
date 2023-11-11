@@ -76,62 +76,65 @@ if (isset($_POST['submit'])) {
 
             <!-- Add Category -->
             <div class="container-fluid">
-                <!-- <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
-                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                    <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3"> -->
+                <div class="row h-100">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
 
-                <h3 class="text-primary">Add Category</h3>
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                    <div class="form-floating mb-3">
-                        <input type="text" name="cname" class="form-control" id="floatingText" placeholder="Username">
-                        <label for="cname">Category name</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" name="ctype" class="form-control" id="floatingInput" placeholder="Email">
-                        <label for="ctype">Category type</label>
-                    </div>
-                    <div class="form-floating mb-4">
-                        <input type="text" name="cdesc" class="form-control" id="floatingPassword"
-                            placeholder="Password">
-                        <label for="cdesc">Category description</label>
-                    </div>
-                    <select class="form-select" aria-label="Default select example" name="status">
-                        <option selected>Open this select status</option>
-                        <option value="1">Active</option>
-                        <option value="2">Deactivate</option>
+                            <h3 class="text-primary">Add Category</h3>
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="cname" class="form-control" id="floatingText"
+                                        placeholder="Username">
+                                    <label for="cname">Category name</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="ctype" class="form-control" id="floatingInput"
+                                        placeholder="Email">
+                                    <label for="ctype">Category type</label>
+                                </div>
+                                <div class="form-floating mb-4">
+                                    <input type="text" name="cdesc" class="form-control" id="floatingPassword"
+                                        placeholder="Password">
+                                    <label for="cdesc">Category description</label>
+                                </div>
+                                <select class="form-select" aria-label="Default select example" name="status">
+                                    <option selected>Open this select status</option>
+                                    <option value="1">Active</option>
+                                    <option value="2">Deactivate</option>
 
-                    </select>
-                    <!-- <div class="d-flex align-items-center justify-content-between mb-4">
+                                </select>
+                                <!-- <div class="d-flex align-items-center justify-content-between mb-4">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
                             </div>
                               <a href="">Forgot Password</a>  
                         </div> -->
-                    <br>
-                    <input type="submit" class="btn btn-primary btn-user btn-block" name="submit">
-                </form>
-                <!-- </div>
+                                <br>
+                                <input type="submit" class="btn btn-primary btn-user btn-block" name="submit">
+                            </form>
+                            <!-- </div>
                 </div>
             </div> -->
-            </div>
-            <!-- </div> -->
+                        </div>
+                        <!-- </div> -->
 
 
 
 
-            <!-- Footer Start -->
-            <?php
-            include('footer.php');
-            ?>
-            <!-- Footer End -->
-        </div>
-        <!-- Content End -->
+                    </div>
+                    <!-- Footer Start -->
+                    <?php
+                    include('footer.php');
+                    ?>
+                    <!-- Footer End -->
+                    <!-- Content End -->
 
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
+                    <!-- Back to Top -->
+                    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i
+                            class="bi bi-arrow-up"></i></a>
+                </div>
 
 
 </body>

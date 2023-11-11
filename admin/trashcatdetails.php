@@ -17,6 +17,10 @@ require('navbar.php');
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
+    <!-- Data Table -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,7 +65,7 @@ require('navbar.php');
                         <div class="bg-secondary rounded h-100 p-4">
                             <h3 class="mb-4 text-primary">View Trash Categories</h3>
                             <div class="table-responsive">
-                                <table class="table table-bordered text-white">
+                                <table id="example" class="display nowrap table table-bordered text-white">
                                     <thead>
                                         <tr>
                                             <th scope="col">Categories_ID</th>

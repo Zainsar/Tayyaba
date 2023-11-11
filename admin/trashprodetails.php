@@ -17,6 +17,10 @@ include('navbar.php');
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <!-- Data Table -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -65,7 +69,7 @@ include('navbar.php');
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Products Table With its Categories</h6>
                             <div class="table-responsive">
-                                <table class="table table-bordered text-white">
+                                <table id="example" class="display nowrap table table-bordered text-white">
                                     <thead>
                                         <tr>
                                             <th scope="col">Products_ID</th>

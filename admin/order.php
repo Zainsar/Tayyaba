@@ -18,6 +18,10 @@ require('navbar.php');
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
+    <!-- Data Table -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,7 +68,8 @@ require('navbar.php');
                                 <br>
                                 <div class="clearfix"></div>
                                 <div class="table-responsive">
-                                    <table class="table table-bordered text-white text-center table-hover">
+                                    <table id="example"
+                                        class="display nowrap table table-bordered text-white text-center table-hover">
                                         <thead class="text-secondary bg-white">
                                             <tr>
                                                 <th scope="col">CardID</th>

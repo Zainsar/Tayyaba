@@ -37,6 +37,10 @@ if(mysqli_num_rows($fetch) > 0){
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Data Table -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -65,8 +69,13 @@ if(mysqli_num_rows($fetch) > 0){
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <?php
+                                $fetch4 = "SELECT * FROM `user-register`";
+                                $conn4 = mysqli_query($connection,$fetch4);
+                                $row4 = mysqli_num_rows($conn4);
+                                ?>
+                                <p class="mb-2">Total User</p>
+                                <h6 class="mb-0"><?php echo $row4 ?></h6>
                             </div>
                         </div>
                     </div>
@@ -74,8 +83,13 @@ if(mysqli_num_rows($fetch) > 0){
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                            <?php
+                                $fetch1 = "SELECT * FROM `addproduct` WHERE `pcategory` = 1";
+                                $conn1 = mysqli_query($connection,$fetch1);
+                                $row1 = mysqli_num_rows($conn1);
+                                ?>
+                                <p class="mb-2">Cosmetic Products</p>
+                                <h6 class="mb-0"><?php echo $row1 ?></h6>
                             </div>
                         </div>
                     </div>
@@ -83,8 +97,13 @@ if(mysqli_num_rows($fetch) > 0){
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
+                            <?php
+                                $fetch2 = "SELECT * FROM `addproduct` WHERE `pcategory` = 2";
+                                $conn2 = mysqli_query($connection,$fetch2);
+                                $row2 = mysqli_num_rows($conn2);
+                                ?>
+                                <p class="mb-2">Jewelery Product</p>
+                                <h6 class="mb-0"><?php echo $row2 ?></h6>
                             </div>
                         </div>
                     </div>
@@ -92,8 +111,13 @@ if(mysqli_num_rows($fetch) > 0){
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-pie fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
+                            <?php
+                                $fetch3 = "SELECT * FROM `cart` WHERE `cartstatus` = 0";
+                                $conn3 = mysqli_query($connection,$fetch3);
+                                $row3 = mysqli_num_rows($conn3);
+                                ?>
+                                <p class="mb-2">Total Orders</p>
+                                <h6 class="mb-0"><?php echo $row3 ?></h6>
                             </div>
                         </div>
                     </div>
@@ -136,7 +160,7 @@ if(mysqli_num_rows($fetch) > 0){
                         <a href="">Show All</a>
                     </div>
                     <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0" href="regiter.php">
+                        <table id="example" class="display nowrap table text-start align-middle table-bordered table-hover mb-0" href="regiter.php">
                             <thead >
                                 <tr class="text-white">
                                     <!-- <th scope="col"><input class="form-check-input" type="checkbox"></th> -->

@@ -33,7 +33,7 @@ if (!isset($_SESSION['useremail'])) {
 	<section class="ftco-section ftco-cart">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-9 ">
+				<div class="col-md-12 ">
 					<table class="table">
 						<thead class="thead-primary">
 							<tr class="text-center">
@@ -44,6 +44,7 @@ if (!isset($_SESSION['useremail'])) {
 								<th>Price</th>
 								<th>Total</th>
 								<th>Action</th>
+								<th>Cart Totals</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -58,7 +59,7 @@ if (!isset($_SESSION['useremail'])) {
 									?>
 									<tr class="text-center">
 										<!-- <td class="product-remove"><a id="closebtn"><span class="icon-close"></span></a></td> -->
-										<input type="hidden" id="cartid" value="<?php echo $row['cartid'] ?>">
+										<input type="hidden" id="cartid" name="cartid" value="<?php echo $row['cartid'] ?>">
 										<td class="image-prod"><img class="img" src=" <?php
 										echo 'images/' . $row['pimage'] ?>" alt=""></td>
 
@@ -92,72 +93,70 @@ if (!isset($_SESSION['useremail'])) {
 													class="fa-solid fa-trash"></i></a>
 
 										</td>
-									</tr><!-- END TR-->
-									<?php
+										<td>
+											<span>Subtotal</span>
+											<span>
+												<?php
+
+												echo $subtotal ?>
+											</span>
+											</p>
+
+
+											<hr>
+											<p class="d-flex total-price">
+												<span>Total</span>
+												<span>
+													<?php
+													echo $subtotal ?>
+												</span>
+											</p>
+						</div>
+						<form action="" method="post"></form>
+						<p class="text-center"><a href="updatestatusagain.php?cartid=<?php echo $row['cartid'] ?>"
+								class="btn btn-primary py-3 px-4">Proceed to Checkout</a>
+						</p>
+						</td>
+						</tr><!-- END TR-->
+						<?php
 
 								}
 							}
 
 
 							?>
-				</div>
-				</tbody>
-				</table>
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-				<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+			</div>
+			</tbody>
+			</table>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+			<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-				<script>
-					$(document).ready(function () {
-						let closebtn = $('#closebtn');
-						let cartid = $('#cartid').val();
-						closebtn.click(function () {
-							$.ajax({
-								url: 'remove.php',
-								type: 'POST',
-								data: { cartid: cartid },
-								success: function (data) {
-									if (data == 1) {
-										alert('data deleted');
+			<script>
+				$(document).ready(function () {
+					let closebtn = $('#closebtn');
+					let cartid = $('#cartid').val();
+					closebtn.click(function () {
+						$.ajax({
+							url: 'remove.php',
+							type: 'POST',
+							data: { cartid: cartid },
+							success: function (data) {
+								if (data == 1) {
+									alert('data deleted');
 
-									} else {
-										alert('not deleted');
+								} else {
+									alert('not deleted');
 
-									}
 								}
-							})
+							}
 						})
-
 					})
-				</script>
-			</div>
-			<div class="col-md-3 mt-5 ftco-animate" style="border: 2px solid white;">
-				<div class="cart-total mb-3">
-					<h3>Cart Totals</h3>
-					<p class="d-flex">
-						<span>Subtotal</span>
-						<span>
-							<?php
 
-							echo $subtotal ?>
-						</span>
-					</p>
-
-
-					<hr>
-					<p class="d-flex total-price">
-						<span>Total</span>
-						<span>
-							<?php
-							echo $subtotal ?>
-						</span>
-					</p>
-				</div>
-
-				<p class="text-center"><a href="checkout.php" class="btn btn-primary py-3 px-4">Proceed to Checkout</a>
-				</p>
-			</div>
-
+				})
+			</script>
 		</div>
+
+</div>
 </div>
 </section>
 

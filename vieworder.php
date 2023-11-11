@@ -19,8 +19,14 @@ include('includes/config.php');
 <div class="container">
     <div class="row">
 
+
         <?php
-        $productsfetch = "SELECT * from booked";
+        if (!isset($_SESSION['useremail'])) {
+            header("location: login.php");
+
+        }
+        $current_user_id = $_SESSION['userid'];
+        $productsfetch = "SELECT * from booked WHERE `userid` = '$current_user_id'";
         $runquery = mysqli_query($connection, $productsfetch);
         if (mysqli_num_rows($runquery) > 0) {
             while ($data = mysqli_fetch_assoc($runquery)) {
@@ -43,12 +49,12 @@ include('includes/config.php');
                         </p>
 
                     </div>
-                    <?php
+                </div>
+                <?php
             }
         }
 
         ?>
-        </div>
         <?php
         $current_user_id = $_SESSION['userid'];
 
