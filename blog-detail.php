@@ -243,40 +243,40 @@ if (isset($_POST['submit'])) {
                         <br>
                         <h3 class="sub-title comment">Feedback</h3>
                         <div class="row">
-                            <div class="col-md-8">
-                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"class="comment-form">
+                            <div class="col-md-12">
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="comment-form">
                                     <div class="form-group">
                                         <input type="hidden" class="form-control" name="id" id="id" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="name">First Name*</label>
                                         <input type="text" class="form-control" name="first_name" id="name"
-                                            placeholder="">
+                                            placeholder="" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Last Name*</label>
                                         <input type="text" class="form-control" name="last_name" id="name"
-                                            placeholder="">
+                                            placeholder="" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="email">E-mail*</label>
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="number">Phone-number*</label>
-                                        <input type="number" class="form-control" name="phone_number" id="subject"
+                                        <input type="email" class="form-control" required name="email" id="email"
                                             placeholder="">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="message">Message*</label>
-                                        <textarea class="form-control" name="message" id="message"></textarea>
+                                        <label for="number">Phone-number*</label>
+                                        <input type="number" class="form-control" required name="phone_number"
+                                            id="subject" placeholder="">
                                     </div>
 
-                                    <button type="submit"name="submit"
-                                        class="btn btn-blue">Submit</button>
+                                    <div class="form-group">
+                                        <label for="message">Message*</label>
+                                        <textarea class="form-control" name="message" required id="message"></textarea>
+                                    </div>
+
+                                    <button type="submit" name="submit" class="btn btn-blue">Submit</button>
                                 </form>
                             </div>
 

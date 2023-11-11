@@ -83,58 +83,13 @@
                             Enter your email and we'll send you a coupon
                             with 10% off your next order. Add any text here
                         </p>
-                        <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                        <form method="post" action="phpmailer.php">
                             <div class="form-group">
                                 <input type="email" class="form-control" id="exampleInputEmail1" name="email"
                                     placeholder="Enter email" required>
                             </div>
                             <button type="submit" class="btn btn-default">Subscribe Now</button>
                         </form>
-                        <?php
-                        require 'vendor/autoload.php'; // Path to your autoload.php file
-                        use PHPMailer\PHPMailer\PHPMailer;
-                        use PHPMailer\PHPMailer\Exception;
-
-
-                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            // Get the email from the form
-                            $email = $_POST['email'];
-
-                            // Validate email (you can add more validation if needed)
-                            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                                die("Invalid email format");
-                            }
-
-                            // Send email
-                            try {
-                                $mail = new PHPMailer(true);
-
-                                // Server settings
-                                $mail->isSMTP();
-                                $mail->Host = 'smtp.gmail.com'; // SMTP server
-                                $mail->SMTPAuth = true;
-                                $mail->Username = 'zainsarfraz745@gmail.com'; // Sender's email address
-                                $mail->Password = 'lkqe avoe gwnx xdcr';
-                                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // TLS encryption
-                                $mail->Port = 587; // Port for TLS
-                        
-                                // Recipients
-                                $mail->setFrom('zainsarfraz745@gmail.com', 'Zain');
-                                $mail->addAddress($email);
-
-                                // Content
-                                $mail->isHTML(true);
-                                $mail->Subject = 'Subscription Confirmation';
-                                $mail->Body = 'Your subscription has been successfully processed.';
-
-                                $mail->send();
-                                echo "<script> alert('Message has been sent to email') </script>";
-                            } catch (Exception $e) {
-                                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-                            }
-                        }
-                        ?>
-
                     </div>
                 </div>
             </div>

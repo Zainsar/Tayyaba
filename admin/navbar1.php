@@ -6,7 +6,7 @@ if (isset($_SESSION['admin'])) {
 ?>
 <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-2">
     <a href="index.php" class="navbar-brand d-flex me-4">
-        <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+        <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>J's Cosmetics </h3>
     </a>
 
     <div class="navbar-nav align-items-center ms-auto">

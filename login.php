@@ -17,7 +17,7 @@ if (isset($_POST['Login'])) {
     $_SESSION["username"] = $row['username'];
     echo '<script> window.location.href="index.php" </script>';
   } else {
-    echo "<script> alert('Invalid Username/password'); </script>";
+    echo "<script> alert('Invalid Email/password'); </script>";
 
   }
 
@@ -80,19 +80,22 @@ if (isset($_POST['Login'])) {
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
         <div class="full">
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" class="billing-form ftco-bg-dark p-3 p-md-5">
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" class="billing-form ftco-bg-dark p-3 p-md-5"
+            onsubmit="return validateForm()">
             <div class="row align-items-end">
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="Email">Email</label>
-                  <input type="text" name="Login_email" class="form-control" placeholder="Email">
+                  <input type="text" name="Login_email" id="email" class="form-control" placeholder="Email">
+                  <span id="emailerror" class="text-danger font-weight-bold"></span>
                 </div>
               </div>
 
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="Password">Password</label>
-                  <input type="password" name="Login_pass" class="form-control" placeholder="Password">
+                  <input type="password" name="Login_pass" id="password" class="form-control" placeholder="Password">
+                  <span id="passworderror" class="text-danger font-weight-bold"></span>
                 </div>
 
               </div>
@@ -106,6 +109,29 @@ if (isset($_POST['Login'])) {
 
 
           </form><!-- END -->
+          <script>
+            function validateForm() {
+              var email = document.getElementById('email').value;
+              var password = document.getElementById('password').value;
+
+              // Regular expressions for validation
+              var emailcheck = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+              var passwordcheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*].{8,16}$/;
+
+              if (emailcheck.test(email)) {
+                document.getElementById('emailerror').innerHTML = " ";
+              } else {
+                document.getElementById('emailerror').innerHTML = " Please Enter Email.";
+                return false;
+              }
+              if (passwordcheck.test(password)) {
+                document.getElementById('passworderror').innerHTML = " ";
+              } else {
+                document.getElementById('passworderror').innerHTML = "Please Enter Password. Incorrect Password ";
+                return false;
+              }
+            }
+          </script>
           <!-- <form action="index.html">
                         <fieldset>
                            <input type="text" placeholder="Enter your full name" name="name" required />

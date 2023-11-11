@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2023 at 10:57 PM
+-- Generation Time: Nov 11, 2023 at 09:47 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -136,7 +136,7 @@ INSERT INTO `admin_reg` (`id`, `name`, `email`, `password`, `phone`, `images`) V
 (1, 'talha', 'muhammadtalha.aptech2006@gmail.com', '$2y$10$2122xI6lqR1wXS1sU/Osgek9DilhJ5KCyokRKB1WdOnLAt/RWslTO', 789456, ''),
 (2, 'sadia', 'sadiabader433@gmail.com', '$2y$10$r29xLVTSIOeMiQBco5fPHupxUA77btKhKB/chAc9xL/oLUgLIivP2', 2147483647, ''),
 (3, 'Tayyaba muslim', 'muslimtayyaba@gmail.com', '$2y$10$wDI44wBQUyPsBmKVzfMahe/mKM9sSy671OGszI/yxkaTY6YrHgAUq', 123456, ''),
-(5, 'Zain Sarfraz', 'zainsarfraz82@gmail.com', '$2y$10$o/aebig4n8c9TIqJncZMPuh3EAI9MN0ics/2Oz9u0A6CsCE34qQZO', 2147483647, 'mine pic.jpg');
+(4, 'Zain Sarfraz', 'zainsarfraz82@gmail.com', '$2y$10$E94X3Y.CC5XnHG26znQjeOZoabbNM.zDcM2I5SwUlg98HCXFaN.b2', 2147483647, 'mine pic.jpg');
 
 -- --------------------------------------------------------
 
@@ -190,9 +190,7 @@ CREATE TABLE `cart` (
 INSERT INTO `cart` (`cartid`, `userid`, `proid`, `cartqty`, `cartstatus`, `cartdate`, `carttime`, `updatestatus`) VALUES
 (25, 11, 2, 2, 0, '2023-11-10 11:40:23', '11:40:23', 'Pending'),
 (26, 11, 4, 1, 1, '2023-11-10 11:57:45', '11:57:45', 'pending'),
-(27, 11, 5, 1, 1, '2023-11-10 12:31:55', '12:31:55', 'pending'),
-(29, 14, 18, 3, 0, '2023-11-10 17:05:37', '17:05:37', 'Pending'),
-(32, 14, 27, 4, 1, '2023-11-10 17:09:52', '17:09:52', 'pending');
+(27, 11, 5, 1, 1, '2023-11-10 12:31:55', '12:31:55', 'pending');
 
 -- --------------------------------------------------------
 
@@ -285,8 +283,9 @@ INSERT INTO `user-register` (`id`, `username`, `email`, `password`) VALUES
 (11, 'midhat@gmail.com', 'mid@gmail.com', '$2y$10$Ivo55pM0PdZLFT5.w5IrVOiRA.YEKy55CblzOk4.WE8NeGyKYe2Em'),
 (12, 'sadia', 'sadia@gmail.com', '$2y$10$d/26d2f6mPRUcHq50vLUmulxJ5noZVY9bFbN6a/8tGQELQJFd0Ihu'),
 (13, 'abc', 'abc@gmail. com', '$2y$10$lHZ/uLONZyib3yecBmdcGOOICgfBh4k7c1sj0LW9Hto3nH6TXyOFu'),
-(14, 'Zain Sarfraz', 'zainsarfraz82@gmail.com', '$2y$10$AuH6JGOL0nqLcnBOfZd0COmifro/Y6/WoejZuXoEi23YM54Udr7hK'),
-(15, 'Syed Muhammad Zain Sarfraz', 'zainsarfraz424@gmail.com', '$2y$10$7htf.P5mATz6OHs0Tp5jfe4Wx7wIL6CXDK.8SOmpNjiuJbxIqcmMq');
+(15, 'Syed Muhammad Zain Sarfraz', 'zainsarfraz424@gmail.com', '$2y$10$7htf.P5mATz6OHs0Tp5jfe4Wx7wIL6CXDK.8SOmpNjiuJbxIqcmMq'),
+(18, 'Syed Muhammad Zain Sarfraz', 'syedmuhammadzainsarfraz@gmail.com', '$2y$10$vxR9prJLS8e2VRPLPOb.DedY1wTyfmo90d0EMnuekjvEnVKGS/.OC'),
+(19, 'zainsarfraz', 'zainsarfraz82@gmail.com', '$2y$10$eL0Vec3uAGlnOPmvdLGWJ.T49V.DargeBZw/OIMlYmZsrRkoEAPkO');
 
 --
 -- Indexes for dumped tables
@@ -363,7 +362,7 @@ ALTER TABLE `addproduct`
 -- AUTO_INCREMENT for table `admin_reg`
 --
 ALTER TABLE `admin_reg`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `booked`
@@ -393,7 +392,7 @@ ALTER TABLE `jewellery`
 -- AUTO_INCREMENT for table `user-register`
 --
 ALTER TABLE `user-register`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables

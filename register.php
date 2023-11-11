@@ -51,6 +51,7 @@ if (isset($_POST['register'])) {
     }
     $insert_query = "INSERT INTO `user-register` (`username`, `email`, `password`) VALUES ('$username', '$email', '$password')";
     $conn_insert = mysqli_query($connection, $insert_query);
+    echo "<script> alert('You Are Succesfully Rigester') </script>";
     echo '<script> window.location.href="login.php" </script>';
 
   }
@@ -115,25 +116,29 @@ if (isset($_POST['register'])) {
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
         <div class="full">
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" class="billing-form ftco-bg-dark p-3 p-md-5">
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" class="billing-form ftco-bg-dark p-3 p-md-5"
+            onsubmit="return validateForm()">
             <div class="row align-items-end">
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="Username">Username</label>
-                  <input type="text" name="username" class="form-control" placeholder="Username">
+                  <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+                  <span id="usererror" class="text-danger font-weight-bold"></span>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="Email">Email</label>
-                  <input type="text" name="email" class="form-control" placeholder="Email">
+                  <input type="text" name="email" id="email" class="form-control" placeholder="Email">
+                  <span id="emailerror" class="text-danger font-weight-bold"></span>
                 </div>
               </div>
 
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="Password">Password</label>
-                  <input type="password" name="password" class="form-control" placeholder="Password">
+                  <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                  <span id="passworderror" class="text-danger font-weight-bold"></span>
                 </div>
 
               </div>
@@ -147,6 +152,38 @@ if (isset($_POST['register'])) {
 
 
           </form><!-- END -->
+
+          <script>
+            function validateForm() {
+              var username = document.getElementById('username').value;
+              var email = document.getElementById('email').value;
+              var password = document.getElementById('password').value;
+
+              // Regular expressions for validation
+              var usercheck = /^[A-Za-z .]{3,15}$/;
+              var emailcheck = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+              var passwordcheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*].{8,16}$/;
+
+              if (usercheck.test(username)) {
+                document.getElementById('usererror').innerHTML = " ";
+              } else {
+                document.getElementById('usererror').innerHTML = " Invalid username. must be at least 3,15 characters long . may include alphabets only. ";
+                return false;
+              }
+              if (emailcheck.test(email)) {
+                document.getElementById('emailerror').innerHTML = " ";
+              } else {
+                document.getElementById('emailerror').innerHTML = " Invalid Email.";
+                return false;
+              }
+              if (passwordcheck.test(password)) {
+                document.getElementById('passworderror').innerHTML = " ";
+              } else {
+                document.getElementById('passworderror').innerHTML = "Password must be at least 9,16 characters long. may include numbers and Special Characters ";
+                return false;
+              }
+            }
+          </script>
           <!-- <form action="index.html">
                         <fieldset>
                            <input type="text" placeholder="Enter your full name" name="name" required />

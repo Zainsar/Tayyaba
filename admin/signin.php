@@ -86,16 +86,19 @@ if (isset($_POST['login'])) {
                             </a>
                             <h3>Sign In</h3>
                         </div>
-                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"
+                            onsubmit="return validateForm()">
                             <div class="form-floating mb-3">
-                                <input type="email" name="log_email" class="form-control" id="floatingInput"
+                                <input type="email" name="log_email" id="email" class="form-control" id="floatingInput"
                                     placeholder="name@example.com">
                                 <label for="floatingInput">Email address</label>
+                                <span id="emailerror" class="text-danger font-weight-bold"></span>
                             </div>
                             <div class="form-floating mb-4">
-                                <input type="password" name="log_pass" class="form-control" id="floatingPassword"
-                                    placeholder="Password">
+                                <input type="password" id="password" name="log_pass" class="form-control"
+                                    id="floatingPassword" placeholder="Password">
                                 <label for="floatingPassword">Password</label>
+                                <span id="passworderror" class="text-danger font-weight-bold"></span>
                             </div>
                             <!-- <div class="d-flex align-items-center justify-content-between mb-4">
                             <div class="form-check">
@@ -106,7 +109,7 @@ if (isset($_POST['login'])) {
                             <!-- </div> -->
                             <button type="submit" class="btn btn-primary py-3 w-100 mb-4" name="login" for="login">Sign
                                 In</button>
-                            <p class="text-center mb-0">Don't have an Account? <a href="">Sign Up</a></p>
+                            <p class="text-center mb-0">Don't have an Account? <a href="register.php">Sign Up</a></p>
                         </form>
                     </div>
                 </div>
@@ -114,7 +117,29 @@ if (isset($_POST['login'])) {
         </div>
         <!-- Sign In End -->
     </div>
+    <script>
+        function validateForm() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
 
+            // Regular expressions for validation
+            var emailcheck = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+            var passwordcheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*].{8,16}$/;
+
+            if (emailcheck.test(email)) {
+                document.getElementById('emailerror').innerHTML = " ";
+            } else {
+                document.getElementById('emailerror').innerHTML = " Please Enter Email.";
+                return false;
+            }
+            if (passwordcheck.test(password)) {
+                document.getElementById('passworderror').innerHTML = " ";
+            } else {
+                document.getElementById('passworderror').innerHTML = "Please Enter Password. Incorrect Password ";
+                return false;
+            }
+        }
+    </script>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
