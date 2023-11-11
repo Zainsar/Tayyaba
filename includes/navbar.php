@@ -83,7 +83,7 @@ session_start();
 <body bgcolor="white">
 
     <div id="wrapper" class="homepage-1"> <!-- wrapper -->
-        <div id="header"> <!-- header -->
+        <div id="header" style=" width:100%; position:fixed; z-index:1; background-color: white; margin:0 auto 0 auto;"> <!-- header -->
             <div class="top"> <!-- top -->
                 <div class="container">
                     <ul class="top-support">
@@ -110,7 +110,7 @@ session_start();
             </div> <!-- top -->
 
             <div id="believe-nav"> <!-- Nav -->
-                <div class="container">
+            <div class="container">
                     <div class="min-marg">
                         <nav class="navbar navbar-default">
                             <!-- <div class="container-fluid"> -->
@@ -123,7 +123,7 @@ session_start();
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="index.php" style="margin-top:-30px;"><img
+                                <a class="navbar-brand" href="index.php" style="margin-top:-20px;"><img
                                         src="images/lo1.jpg" alt=""></a>
                             </div>
 
@@ -151,7 +151,17 @@ session_start();
                                         <li><a href="blog-detail.php">Blog </a></li>
                                         <li><a href="products.php">products</a></li>
                                         <li><a href="vieworder.php">View Bill</a></li>
-                                        <li><a href="cart.php"><img src="images/bag.png" alt="bag"><span></span></a></li>
+                                        <?php 
+                                        require("config.php");
+                                        $current_user_id = $_SESSION["userid"];
+                                        $count_cart = mysqli_query($connection, "SELECT count(cartid) as `total` from `cart` where `userid` = '$current_user_id' AND `cartstatus` = 1");
+                                        if($count_cart){
+                                           if(mysqli_num_rows($count_cart) > 0){
+                                                $row = mysqli_fetch_assoc($count_cart);
+                                           }
+                                        }
+                                        ?>
+                                        <li><a href="cart.php"><img src="images/bag.png" alt="bag"><span><?php echo $row['total'] ?></span></a></li>
                                         <?php
                                         require("config.php");
                                         $username = $_SESSION["useremail"];
@@ -159,19 +169,18 @@ session_start();
                                         $result = mysqli_query($connection, $query);
                                         $result1 = mysqli_fetch_assoc($result);
                                         ?>
-                                        <div class="navbar-nav align-items-center ms-auto" style="margin-left: 20px;">
+                                        <div class="navbar-nav align-items-center ms-auto" style="margin-left: 10px;">
                                             <div class="nav-item dropdown">
                                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                                                    <img src="<?php echo 'userimgs/' . $result1['images'] ?>" alt=""
-                                                        height="40px" width="40px"
-                                                        style="border-radius: 200px; border:2px solid black ;">
+                                                    <img src="<?php echo 'includes/userimgs/' . $result1['images']; ?>" alt=""
+                                                        height="40px" width="40px" style="border-radius: 200px; border:2px solid black ;">
                                                     <span class=" d-lg-inline-flex"
                                                         style="color: black; font-style: italic; font-weight: 700; font-size: 20px;">
                                                         <?php echo $result1['username'] ?>
                                                     </span>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-end border-0 rounded-0 rounded-bottom m-0"
-                                                    style="margin-top: 4px;">
+                                                    style="margin-top: 4px; z-index: 1;">
                                                     <a href="myprofile.php" class="dropdown-item">My Profile</a>
                                                     <br>
                                                     <a href="updatepassword.php" class="dropdown-item">Update Password</a>
@@ -274,4 +283,6 @@ session_start();
                 </div>
             </div>
         </div> <!-- header -->
+        </div> <!-- header -->
+
         <script src="js/script.js"></script>

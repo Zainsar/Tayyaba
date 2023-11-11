@@ -99,7 +99,16 @@ include('includes/config.php');
         background: #ffc33c;
     }
 </style>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div id="content"> <!-- Content -->
     <div class="page-title" style="background:url(images/jenny.png); background-size: cover;">
         <div class="container">

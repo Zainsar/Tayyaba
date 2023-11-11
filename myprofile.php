@@ -7,6 +7,16 @@ $query = "SELECT * FROM `user-register` WHERE `email` = '$username'";
 $result = mysqli_query($connection, $query);
 $result1 = mysqli_fetch_assoc($result);
 ?>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="content" style="background:url(images/bg1234.jpg); background-size: cover; height:700px; color:white;">
   <div class="container">
     <div class="ct-offers">
@@ -20,8 +30,8 @@ $result1 = mysqli_fetch_assoc($result);
     <div class="col-md-12">
       <div class="card mb-3">
         <div class="card-body bg-secondary">
-          <img src="<?php echo 'includes/userimgs/' . $result1['images'] ?>" alt="User Image" class="rounded-circle"
-            width="150" style="margin-top: 20px;">
+          <img src="<?php echo '../includes/userimgs/' . $result1['images'] ?>" alt="User Image" 
+            width="350" style="margin-top: 20px;">
           <div class="row" style="margin-top: 20px;">
             <div class="col-lg-3">
               <h3 class="mb-0" style="color: white; font-weight: normal; font-style: italic;">Full Name</h3>

@@ -52,7 +52,16 @@ if (isset($_POST['submit'])) {
 </style>
 
 </html>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div id="content"> <!-- Content -->
     <div class="page-title" style="background:url(images/about.jpg); background-size: cover;">
         <div class="container">

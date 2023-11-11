@@ -3,6 +3,14 @@ include('includes/navbar.php');
 include('includes/config.php');
 ?>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <div class="content-offers"
     style="background:url(images/jewelery.jpg); background-size: cover; margin-top:40px; height: 150px;">

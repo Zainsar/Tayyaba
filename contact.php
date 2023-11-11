@@ -3,6 +3,16 @@
 include('includes/navbar.php');
 include('includes/config.php');
 ?>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div id="content"> <!-- Content -->
     <div class="page-title">
         <div class="container">

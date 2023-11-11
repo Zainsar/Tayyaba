@@ -1,6 +1,7 @@
 <?php
 
 include('includes/navbar.php');
+// session_start();
 ?>
 <html>
 <style>
@@ -25,7 +26,6 @@ include('includes/navbar.php');
 </html>
 
 <!-- END nav -->
-
 <div id="main-slider" class="slid1"> <!-- Slider -->
 	<div id="home-slider" class="owl-carousel owl-theme">
 		<div class="item" id="zoom1" style="height:600px">
@@ -50,13 +50,7 @@ include('includes/navbar.php');
 		</div>
 	</div>
 </div>
-<?php
-if (isset($_SESSION['userid'])) {
-	$userid = $_SESSION['userid'];
-} else {
-	$userid = '';
-}
-?>
+
 <section class="ftco-section" style="background:black; color: white;">
 	<div class="container">
 		<div class="row">
@@ -71,8 +65,8 @@ if (isset($_SESSION['userid'])) {
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="firstname">First Name</label>
-								<input type="hidden" id="userid" name="userid" value="<?php echo $userid ?>">
 								<input type="text" class="form-control" placeholder="" name="firstname" required>
+								<input type="hidden" class="form-control" placeholder="" name="userid" value="<?php echo $_SESSION['userid']?>" required>
 							</div>
 						</div>
 

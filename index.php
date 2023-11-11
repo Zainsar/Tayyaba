@@ -98,6 +98,16 @@ include('includes/config.php');
 </style>
 
 </html>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div id="main-slider" class="slid1"> <!-- Slider -->
     <div id="home-slider" class="owl-carousel owl-theme">
         <div class="item" id="zoom1">

@@ -52,6 +52,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="content" style="background:url(images/bg1234.jpg); background-size: cover; height:900px; color:white;">
     <div class="container">
         <div class="ct-offers">
