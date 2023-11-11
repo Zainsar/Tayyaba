@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2023 at 03:31 PM
+-- Generation Time: Nov 11, 2023 at 09:58 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -188,6 +188,13 @@ CREATE TABLE `feedback-form` (
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `feedback-form`
+--
+
+INSERT INTO `feedback-form` (`id`, `first_name`, `last_name`, `email`, `phone_number`, `message`) VALUES
+(1, 'zain', 'Sarfraz', 'zainsarfraz82@gmail.com', 2147483647, 'Amazing Products');
+
 -- --------------------------------------------------------
 
 --
@@ -242,16 +249,15 @@ CREATE TABLE `user-register` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `images` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user-register`
 --
 
-INSERT INTO `user-register` (`id`, `username`, `email`, `password`, `images`) VALUES
-(1, 'zainsarfraz', 'zainsarfraz82@gmail.com', '$2y$10$T3hG475uVVdEcDWFn6p.IuvdGrmFWxe9XqttwFwP2jPRicRapke8a', 'IMG-20221010-WA0004.jpg');
+INSERT INTO `user-register` (`id`, `username`, `email`, `password`) VALUES
+(1, 'zainsarfraz', 'zainsarfraz82@gmail.com', '$2y$10$T3hG475uVVdEcDWFn6p.IuvdGrmFWxe9XqttwFwP2jPRicRapke8a');
 
 --
 -- Indexes for dumped tables
@@ -347,7 +353,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `feedback-form`
 --
 ALTER TABLE `feedback-form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `jewellery`

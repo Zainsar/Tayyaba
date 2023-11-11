@@ -46,10 +46,11 @@ if (isset($_SESSION["useremail"])) {
 
 <body>
 
-    <div id="wrapper" class="homepage-1" > <!-- wrapper -->
-        <div id="header" style=" width:100%; position:fixed; z-index:1; background-color: white; margin:0 auto 0 auto;"> <!-- header -->
+    <div id="wrapper" class="homepage-1"> <!-- wrapper -->
+        <div id="header" style=" width:100%; position:fixed; z-index:1; background-color: white; margin:0 auto 0 auto;">
+            <!-- header -->
             <a class="navbar-brand" href="index.php" style="margin-top:-15px"><img src="images/lo3.png" alt=""></a>
-            <div class="top" style="height:100px" > <!-- top -->
+            <div class="top" style="height:100px"> <!-- top -->
                 <div class="container">
 
                     <ul class="top-support" style="margin-top:20px">
@@ -77,4 +78,4 @@ if (isset($_SESSION["useremail"])) {
                     </div>
                 </div>
             </div> <!-- top -->
-            </div> <!-- top -->
+        </div> <!-- top -->

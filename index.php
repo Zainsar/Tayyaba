@@ -479,14 +479,14 @@ include('includes/config.php');
                         </div>
                     </div>
                 </div>
-                </div> <!-- Content -->  
-            
-          
-                       
+            </div> <!-- Content -->
 
 
-    
-                                          
+
+
+
+
+
             <br>
             <br>
             <?php

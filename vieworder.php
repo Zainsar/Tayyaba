@@ -14,7 +14,9 @@ $current_user_id = $_SESSION['userid'];
 <br>
 <br>
 
-<div class="content-offers" style="background:url(images/products.jpg); background-size: cover; margin-top:40px; height: 150px;" style="background-color:black; color:white;">
+<div class="content-offers"
+    style="background:url(images/products.jpg); background-size: cover; margin-top:40px; height: 150px;"
+    style="background-color:black; color:white;">
 
     <div class="container" style=" color:white;">
         <div class="ct-offers">
@@ -31,7 +33,7 @@ $current_user_id = $_SESSION['userid'];
     <div class="container">
         <a href="products.php" class="btn btn-primary"> Continue Shopping</a>
         <div class="row" style="font-size:20px;">
-            
+
             <!-- start -->
             <div class="col-md-6 col-sm-6 col-xsm-6">
                 <?php
@@ -39,25 +41,25 @@ $current_user_id = $_SESSION['userid'];
                 $runquery = mysqli_query($connection, $productsfetch);
                 if (mysqli_num_rows($runquery) > 0) {
                     while ($data = mysqli_fetch_assoc($runquery)) {
-                ?>
-                <hr style=" border: none;height: 2px;background-color: #333;">
-                <div style="margin-top:20px ">
+                        ?>
+                        <hr style=" border: none;height: 2px;background-color: #333;">
+                        <div style="margin-top:20px ">
 
-                    <h1>
-                        <?php echo $data['First Name'] . ' ' . $data['Last Name']; ?>
-                    </h1>
-                    <p class="price"><span>
-                        <?php echo $data['Country'] . '<br> ' . $data['address'] . ' ' . $data['Appartment']; ?>
-                    </span></p>
-                    <p>
-                        <?php echo $data['phone']; ?>
-                    </p>
-                    <p>
-                        <?php echo $data['email']; ?>
-                    </p>
-                </div>
+                            <h1>
+                                <?php echo $data['First Name'] . ' ' . $data['Last Name']; ?>
+                            </h1>
+                            <p class="price"><span>
+                                    <?php echo $data['Country'] . '<br> ' . $data['address'] . ' ' . $data['Appartment']; ?>
+                                </span></p>
+                            <p>
+                                <?php echo $data['phone']; ?>
+                            </p>
+                            <p>
+                                <?php echo $data['email']; ?>
+                            </p>
+                        </div>
 
-                <?php
+                        <?php
                     }
                 }
                 ?>
@@ -78,7 +80,8 @@ $current_user_id = $_SESSION['userid'];
                             <input type="hidden" id="proid" value="<?php echo $row['pid'] ?>">
                             <div class="col-md-6 col-sm-6 col-xsm-6">
 
-                                <img src="<?php echo 'images/' . $row['pimage']; ?>" alt="" class="img-responsive" name="product-image" height="150px" width="150px">
+                                <img src="<?php echo 'images/' . $row['pimage']; ?>" alt="" class="img-responsive"
+                                    name="product-image" height="150px" width="150px">
                             </div>
                             <div class="col-md-6 col-sm-6 col-xsm-6">
 
@@ -96,7 +99,7 @@ $current_user_id = $_SESSION['userid'];
                             </div>
                         </div>
 
-                <?php
+                        <?php
                     }
                 }
                 ?>

@@ -59,8 +59,8 @@ include('includes/config.php');
                                         <div class="product-fade">
                                             <div class="product-fade-wrap">
                                                 <div id="product-image" class="">
-                                                    <div class="item"><img src="<?php echo 'images/' . $row['pimage']; ?>" alt=""
-                                                            class="img-responsive"></div>
+                                                    <div class="item"><img src="<?php echo 'images/' . $row['pimage']; ?>"
+                                                            alt="" class="img-responsive"></div>
 
                                                 </div>
                                                 <div class="product-fade-ct">

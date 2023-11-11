@@ -66,7 +66,8 @@ include('includes/navbar.php');
 							<div class="form-group">
 								<label for="firstname">First Name</label>
 								<input type="text" class="form-control" placeholder="" name="firstname" required>
-								<input type="hidden" class="form-control" placeholder="" name="userid" value="<?php echo $_SESSION['userid']?>" required>
+								<input type="hidden" class="form-control" placeholder="" name="userid"
+									value="<?php echo $_SESSION['userid'] ?>" required>
 							</div>
 						</div>
 
