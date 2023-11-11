@@ -2,7 +2,7 @@
 require 'vendor/autoload.php'; // Path to your autoload.php file
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
+session_start();
 if (!isset($_SESSION['useremail'])) {
     echo "<script> alert('please login first') </script>";
     echo "<script> window.location.href='register.php' </script>";

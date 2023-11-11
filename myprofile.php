@@ -30,7 +30,7 @@ $result1 = mysqli_fetch_assoc($result);
     <div class="col-md-12">
       <div class="card mb-3">
         <div class="card-body bg-secondary">
-          <img src="<?php echo '../includes/userimgs/' . $result1['images'] ?>" alt="User Image" 
+          <img src="<?php echo 'includes/userimgs/' . $result1['images'] ?>" alt="User Image" 
             width="350" style="margin-top: 20px;">
           <div class="row" style="margin-top: 20px;">
             <div class="col-lg-3">

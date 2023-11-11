@@ -32,7 +32,7 @@ require("includes/navbar.php");
                     ?>
                     <form action="backends.php" method="post" class="form-group" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <img src="<?php echo '../includes/userimgs/' . $result1['images'] ?>" alt="User Image"
+                            <img src="<?php echo 'includes/userimgs/' . $result1['images'] ?>" alt="User Image"
                                 class="rounded-circle" width="150">
                             <br><br>
                             <label for="exampleInputEmail1" class="form-label">Name</label>
